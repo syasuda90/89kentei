@@ -10,7 +10,7 @@
 </head>
 <body>
   <main role="main" class="main">
-    <section class="grade" data-index="0">
+    <section class="grade" data-index="0" data-limit="274">
       <h1 class="main-title">野球知識検定 5・6級</h1>
       <div class="verification">
         <h2 id="verification-title" class="verification-title"></h2>
@@ -42,6 +42,7 @@
         <div class="verification-question_answer">答え：<strong></strong></div>
         <button class="btn" onclick="getAnswer()">回答する</button>
         <button class="btn" onclick="fetchNextQuestion()">次の問題へ</button>
+        <button class="btn" onclick="fetchRandomQuestion()">ランダム</button>
       </div>
     </section>
   </main>

@@ -26,6 +26,7 @@ function fetchVerificationItems(index, type) {
           questionSecond.innerHTML = data.items[index].text.second;
           questionThird.innerHTML = data.items[index].text.third;
           questionFour.innerHTML = data.items[index].text.four;
+          answer.innerHTML = '';
           break;
         case 'answer':
           answer.innerHTML = data.items[index].answer;
@@ -46,7 +47,18 @@ function getAnswer() {
 function fetchNextQuestion() {
   const prevIndex = parseInt(grade.dataset.index);
   const nextIndex = prevIndex + 1;
+  grade.dataset.index = nextIndex;
+
   fetchVerificationItems(nextIndex, 'question');
+}
+
+function fetchRandomQuestion() {
+  const minLimit = 1;
+  const maxLimit = parseInt(grade.dataset.limit);
+  const index = Math.floor(Math.random() * (maxLimit + 1 - minLimit)) + minLimit;
+  grade.dataset.index = index;
+
+  fetchVerificationItems(index, 'question');
 }
 
 window.onload = function () {
