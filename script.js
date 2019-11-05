@@ -62,6 +62,14 @@ function fetchRandomQuestion() {
 }
 
 window.onload = function () {
-  const defaultIndex = 0;
+  const query = window.location.search;
+  let questionPosition;
+
+  if (query) {
+    questionPosition = query.match(/question=(.*?)(&|$)/)[1]
+  }
+
+  const defaultIndex = questionPosition || 0;
+
   fetchVerificationItems(defaultIndex, 'question');
 }
