@@ -67,6 +67,7 @@ window.onload = function () {
 
   if (query) {
     questionPosition = query.match(/question=(.*?)(&|$)/)[1]
+    grade.dataset.index = questionPosition;
   }
 
   const defaultIndex = questionPosition || 0;
